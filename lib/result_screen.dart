@@ -10,6 +10,7 @@ class ResultScreen extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.all(40),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Your answered X out of Y Questions correctly"),
             SizedBox(height: 30),
