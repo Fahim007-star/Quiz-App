@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_quiz/question_identifire.dart';
 
 class SummaryItem extends StatelessWidget {
-  const SummaryItem({super.key, required this.itemData});
+  SummaryItem({super.key, required this.itemData});
   final Map<String, Object> itemData;
 
   @override
   Widget build(BuildContext context) {
+    final isCorrectAnswer =
+        itemData["user_answer"] == itemData["correct_answer"];
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(((itemData["question_index"] as int) + 1).toString()),
+          QuestionIdentifire(
+            isCorrectAnswer: isCorrectAnswer,
+            questionNumber: itemData["question_index"] as int,
+          ),
 
           Expanded(
             child: Column(
