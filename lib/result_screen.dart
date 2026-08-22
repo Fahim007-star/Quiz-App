@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_quiz/data/questions.dart';
 import 'package:my_quiz/questions_summary.dart';
