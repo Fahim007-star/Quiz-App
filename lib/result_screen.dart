@@ -3,8 +3,13 @@ import 'package:my_quiz/data/questions.dart';
 import 'package:my_quiz/questions_summary.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key, required this.chosenAnswers});
+  const ResultScreen({
+    super.key,
+    required this.chosenAnswers,
+    required this.onRestart,
+  });
   final List<String> chosenAnswers;
+  final void Function() onRestart;
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
     for (var i = 0; i < chosenAnswers.length; i++) {
@@ -40,12 +45,12 @@ class ResultScreen extends StatelessWidget {
 
             Text("List of answers and Questions..."),
             QuestionsSummary(summaryData: summaryData),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                "Restart Quiz",
-                style: TextStyle(color: Colors.white),
-              ),
+
+            TextButton.icon(
+              onPressed: onRestart,
+              style: TextButton.styleFrom(foregroundColor: Colors.white),
+              icon: Icon(Icons.refresh),
+              label: Text("Restart Quiz!"),
             ),
           ],
         ),
