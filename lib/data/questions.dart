@@ -55,10 +55,4 @@ const questions = [
     questionsText: "Which function is the entry point of every Dart program?",
     answers: ["main()", "start()", "run()", "init()"],
   ),
-
-  QuizQuestions(
-    questionsText:
-        "Which keyword is used to create an asynchronous function in Dart?",
-    answers: ["async", "await", "future", "defer"],
-  ),
 ];
